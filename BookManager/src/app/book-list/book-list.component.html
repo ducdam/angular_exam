@@ -1,0 +1,27 @@
+<div class="container">
+  <h5>Books menu</h5>
+  <button class="btn btn-warning" [routerLink]="['/create']">Create book</button>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">author</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books index as i">
+      <td>{{i+1}}</td>
+      <td><button class="btn btn-info" [routerLink]="['/detail',book.id]">{{book.title}}</button></td>
+      <td>{{book.author}}</td>
+        <td><button class="btn btn-warning" [routerLink]="['/update',book.id]">Update</button></td>
+        <td><button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button></td>
+
+    </tr>
+    </tbody>
+  </table>
+ <h5>number of books:{{countBook}}</h5>
+</div>

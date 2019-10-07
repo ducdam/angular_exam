@@ -1,0 +1,25 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" *ngIf="book">
+  <div class="container">
+    <h5>Create new book</h5>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Title</span>
+      </div>
+      <input [value]="book.title"  type="text" class="form-control" formControlName="title" >
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Author</span>
+      </div>
+      <input [value]="book.author"  type="text" class="form-control"  formControlName="author">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Descreption</span>
+      </div>
+      <textarea [value]="book.description" formControlName="description" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-warning">Update new book</button>
+    <button class="btn btn-info" routerLink="">Back</button>
+  </div>
+</form>
